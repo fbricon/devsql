@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
-public class Hero extends PanacheEntity{
-    
+public class Hero extends PanacheEntity {
+
     public Hero() {
         super();
     }
@@ -16,5 +16,10 @@ public class Hero extends PanacheEntity{
     }
 
     public String name;
+
+    @Override
+    public String toString() {
+        return id + " - " + name;
+    }
 
 }

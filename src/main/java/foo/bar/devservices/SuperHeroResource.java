@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/heroes")
 public class SuperHeroResource {
 
-    // @PostConstruct
+    @PostConstruct
     @Transactional
     public void init() {
         new Hero("Superman").persist();
@@ -23,7 +23,8 @@ public class SuperHeroResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public List<Hero> hello() {
-        return Hero.listAll();
+        List<Hero> heroes = Hero.listAll();
+        return heroes;
     }
 
     @POST
